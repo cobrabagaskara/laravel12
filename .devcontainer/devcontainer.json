@@ -1,5 +1,5 @@
 {
-  "name": "Laravel 12 + Filament 4 (SQLite + Xdebug)",
+  "name": "Laravel 12 + Filament 4",
   "build": {
     "dockerfile": "Dockerfile"
   },
