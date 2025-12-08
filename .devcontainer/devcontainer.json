@@ -12,34 +12,6 @@
     }
   },
   "postCreateCommand": "composer install && npm install && php artisan key:generate",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "bmewburn.vscode-intelephense-client",
-        "MehediDracula.php-namespace-resolver",
-        "onecentlin.laravel-blade",
-        "onecentlin.laravel-extension-pack",
-        "ms-azuretools.vscode-docker",
-        "xdebug.php-debug"
-      ],
-      "settings": {
-        "php.validate.executablePath": "/usr/bin/php",
-        "php.debug.executablePath": "/usr/bin/php",
-        "php.debug.idekey": "VSCODE",
-        "php.debug.port": 9003
-      }
-    }
-  },
-  "forwardPorts": [8000, 9003],
-  "portsAttributes": {
-    "8000": {
-      "label": "Laravel App",
-      "onAutoForward": "notify"
-    },
-    "9003": {
-      "label": "Xdebug",
-      "onAutoForward": "silent"
-    }
-  },
+  "forwardPorts": [8000],
   "remoteUser": "vscode"
 }
