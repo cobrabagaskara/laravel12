@@ -1,27 +1,32 @@
 {
-  "name": "Laravel 12 & Filament 4 Codespace",
-  "image": "mcr.microsoft.com",
-  "forwardPorts":,
-  "portsAttributes": {
-    "8000": {
-      "label": "Laravel App",
-      "onAutoForward": "openBrowser"
+  "name": "Laravel 12 + Filament 4 (SQLite)",
+  "image": "mcr.microsoft.com/devcontainers/php:8.3",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
     },
-    "5173": {
-      "label": "Vite",
-      "onAutoForward": "silent"
+    "ghcr.io/devcontainers/features/composer:1": {
+      "version": "latest"
     }
   },
+  "postCreateCommand": "apt-get update && apt-get install -y php8.3-intl sqlite3 && composer install && npm install && php artisan key:generate",
   "customizations": {
     "vscode": {
       "extensions": [
         "bmewburn.vscode-intelephense-client",
-        "mikestead.laravel-extension-pack",
-        "austenc.tailwind-fold",
-        "Vue.volar",
-        "Vue.vscode-typescript-vue-plugin"
+        "MehediDracula.php-namespace-resolver",
+        "onecentlin.laravel-blade",
+        "onecentlin.laravel-extension-pack",
+        "ms-azuretools.vscode-docker"
       ]
     }
-  }
-  // Hapus seluruh baris "postCreateCommand" untuk sementara waktu
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Laravel App",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "vscode"
 }
