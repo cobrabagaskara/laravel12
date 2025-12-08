@@ -1,6 +1,9 @@
 FROM mcr.microsoft.com/devcontainers/php:8.3
 
-# Install ekstensi tambahan
+# Install ekstensi tambahan yang dibutuhkan Laravel + Filament
 RUN apt-get update && \
-    apt-get install -y php-intl php-xdebug sqlite3 && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+        php-intl \
+        php-xdebug \
+        sqlite3 \
+    && rm -rf /var/lib/apt/lists/*
