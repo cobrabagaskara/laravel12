@@ -1,7 +1,7 @@
 {
   "name": "Laravel 12 & Filament 4 Codespace",
   "image": "mcr.microsoft.com",
-  "forwardPorts": [80, 8000, 5173],
+  "forwardPorts":,
   "portsAttributes": {
     "8000": {
       "label": "Laravel App",
@@ -11,9 +11,6 @@
       "label": "Vite",
       "onAutoForward": "silent"
     }
-  },
-  "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:/home/vscode/.config/composer/vendor/bin"
   },
   "customizations": {
     "vscode": {
@@ -25,6 +22,6 @@
         "Vue.vscode-typescript-vue-plugin"
       ]
     }
-  },
-  "postCreateCommand": "composer global require hirak/prestissimo --no-interaction && cp .env.example .env && composer install && npm install && php artisan key:generate && php artisan migrate --force && php artisan filament:install --panels && npm run dev"
+  }
+  // Hapus seluruh baris "postCreateCommand" untuk sementara waktu
 }
