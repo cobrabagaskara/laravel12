@@ -1,6 +1,8 @@
 {
   "name": "Laravel 12 + Filament 4 (SQLite + Xdebug)",
-  "image": "mcr.microsoft.com/devcontainers/php:8.3",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
@@ -9,7 +11,7 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "apt-get update && apt-get install -y php-intl php-xdebug sqlite3 && composer install && npm install && php artisan key:generate",
+  "postCreateCommand": "composer install && npm install && php artisan key:generate",
   "customizations": {
     "vscode": {
       "extensions": [
