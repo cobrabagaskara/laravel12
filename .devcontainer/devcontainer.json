@@ -1,8 +1,6 @@
 {
-  "name": "Laravel 12 + Filament 4",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "name": "Laravel Minimal",
+  "image": "mcr.microsoft.com/devcontainers/php:8.3",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
